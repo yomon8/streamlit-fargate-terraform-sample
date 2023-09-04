@@ -1,0 +1,50 @@
+{
+	"name": "main",
+	"image": "mcr.microsoft.com/vscode/devcontainers/python:0-3.10-bullseye",
+	"mounts": [
+		{
+			"source": "${localEnv:HOME}/.ssh/",
+			"target": "/home/vscode/.ssh/",
+			"type": "bind"
+		},
+		{
+			"source": "${localEnv:HOME}/.aws/",
+			"target": "/home/vscode/.aws/",
+			"type": "bind"
+		}
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/terraform:1": {},
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+		"ghcr.io/devcontainers-contrib/features/poetry:2": {}
+	},
+	"postCreateCommand": "poetry config virtualenvs.create true && poetry config virtualenvs.in-project true && poetry install",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"HashiCorp.terraform",
+				"ms-vscode.makefile-tools",
+				"ms-azuretools.vscode-docker",
+				"ms-python.python"
+			],
+			"settings": {
+				"[terraform-vars]": {
+					"editor.defaultFormatter": "hashicorp.terraform"
+				},
+				"[terraform]": {
+					"editor.defaultFormatter": "hashicorp.terraform"
+				},
+				"python.defaultInterpreterPath": "./.venv/bin/python",
+				"[python]": {
+					"editor.formatOnSave": true,
+					"editor.codeActionsOnSave": {
+						"source.organizeImports": true,
+						"source.fixAll": false
+					}
+				}
+			}
+		}
+	}
+}

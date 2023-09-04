@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "apprunner-streamlit-with-cognito"
+version = "0.1.0"
+description = ""
+authors = ["yomon8 <sebanngou8@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "^1.26.0"
+

@@ -1,0 +1,9 @@
+[server]
+port = 8501
+
+[theme]
+base = "dark"
+
+[browser]
+serverAddress = "0.0.0.0"
+gatherUsageStats = false
