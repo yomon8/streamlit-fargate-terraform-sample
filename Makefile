@@ -47,7 +47,7 @@ tf-destroy:tf-init ## Terraform Destroy
 	terraform -chdir=$(TF_DIR) destroy $(TF_ARGS)
 
 .PHONY: serve-local
-serve-local: build-app ## ローカルでの実行テスト
+serve-local: ## ローカルでの実行テスト
 	poetry run streamlit run $(ST_INDEX_FILE)
 
 .PHONY: help
