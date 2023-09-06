@@ -180,7 +180,7 @@ resource "aws_lb_target_group" "this" {
     unhealthy_threshold = 5
     timeout             = 5
     interval            = 10
-    matcher             = "200,301,302,403"
+    matcher             = "200"
   }
 }
 
